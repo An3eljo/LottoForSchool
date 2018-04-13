@@ -12,6 +12,11 @@ namespace Lotto
         public Drawing()
         {
             DrawedNumbers = new List<int>();
+            
+        }
+
+        internal void DrawNumbers()
+        {
             var random = new Random();
             for (int i = 0; i < 6; i++)
             {
@@ -19,7 +24,7 @@ namespace Lotto
             }
         }
 
-        public static int GetRandom(Random random, List<int> randomList)
+        private static int GetRandom(Random random, List<int> randomList)
         {
             var r = random.Next(1, 49 + 1);
             foreach (var i in randomList)

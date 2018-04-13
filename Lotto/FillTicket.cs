@@ -11,6 +11,11 @@ namespace Lotto
         internal List<int> FilledNumbers;
         public FillTicket()
         {
+            FilledNumbers = new List<int>();
+        }
+
+        internal void FillNumbers()
+        {
             Console.WriteLine("Your Numbers: ");
             var input = Console.ReadLine();
             var numbersStrings = input.Split(',');
