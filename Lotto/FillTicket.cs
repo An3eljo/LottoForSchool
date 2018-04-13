@@ -16,7 +16,7 @@ namespace Lotto
 
         internal void FillNumbers()
         {
-            Console.WriteLine("Your Numbers: ");
+            Console.Write("Your Numbers: ");
             var input = Console.ReadLine();
             var numbersStrings = input.Split(',');
 

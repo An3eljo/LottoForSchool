@@ -40,6 +40,7 @@ namespace Lotto
                     Console.WriteLine(winningNumber);
                 }
             }
+            Console.ReadKey();
         }
     }
 }
