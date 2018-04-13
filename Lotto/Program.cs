@@ -16,8 +16,6 @@ namespace Lotto
 
             draw.DrawNumbers();
             ticket.FillNumbers();
-            ticket.FilledNumbers[2] = draw.DrawedNumbers[4];
-            ticket.FilledNumbers[5] = draw.DrawedNumbers[2];
 
             foreach (var ticketFilledNumber in ticket.FilledNumbers)
             {
