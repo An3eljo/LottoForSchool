@@ -11,11 +11,11 @@ namespace Lotto
         internal List<int> DrawedNumbers;
         public Drawing()
         {
-            var randomList = new List<int>();
+            DrawedNumbers = new List<int>();
             var random = new Random();
             for (int i = 0; i < 6; i++)
             {
-                randomList.Add(GetRandom(random, randomList));
+                DrawedNumbers.Add(GetRandom(random, DrawedNumbers));
             }
         }
 

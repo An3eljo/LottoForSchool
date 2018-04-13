@@ -14,7 +14,7 @@ namespace Lotto
             var input = Console.ReadLine();
             var numbersStrings = input.Split(',');
 
-
+            var numbers = n
         }
     }
 }
