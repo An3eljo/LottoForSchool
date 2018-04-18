@@ -9,10 +9,11 @@ namespace Lotto
     class Drawing
     {
         internal List<int> DrawedNumbers;
+        internal int ExtraNumber;
         public Drawing()
         {
             DrawedNumbers = new List<int>();
-            
+            ExtraNumber = new int();
         }
 
         internal void DrawNumbers()
@@ -22,6 +23,7 @@ namespace Lotto
             {
                 DrawedNumbers.Add(GetRandom(random, DrawedNumbers));
             }
+            ExtraNumber = GetRandomExtraNumber();
         }
 
         private static int GetRandom(Random random, List<int> randomList)
@@ -36,6 +38,11 @@ namespace Lotto
             }
 
             return r;
+        }
+
+        private static int GetRandomExtraNumber()
+        {
+            return new Random().Next(1, 7); ;
         }
     }
 }

@@ -40,6 +40,12 @@ namespace Lotto
                     Console.WriteLine(winningNumber);
                 }
             }
+
+            if (draw.ExtraNumber == ticket.extraNumber)
+            {
+                Console.WriteLine("Your extra number" + draw.ExtraNumber + "is correct!");
+            }
+
             Console.ReadKey();
         }
     }
