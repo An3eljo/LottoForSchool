@@ -19,7 +19,8 @@ namespace Lotto
 
         internal void FillNumbers()
         {
-            while (true)
+            var looping = true;
+            while (looping)
             {
                 FilledNumbers.Clear();
                 Console.Write("Your Numbers: ");
@@ -43,7 +44,6 @@ namespace Lotto
                 }
                 
                 var numbersStrings = input.Split(',');
-                var looping = false;
 
                 if (numbersStrings.Length != 6)
                 {
@@ -54,9 +54,29 @@ namespace Lotto
                 {
                     FilledNumbers.Add(int.Parse(numbersStrings[i]));
                 }
-
-                foreach (var filledNumber in FilledNumbers)
+                for (int i = 0; i < FilledNumbers.Count; i++)
                 {
+                    if (FilledNumbers[i] < 1 || FilledNumbers[i] > 49)
+                    {
+                        Console.WriteLine("Numbers have to be between 1 and 49");
+                        break;
+                    }
+                    for (int j = 0; j < FilledNumbers.Count; j++)
+                    {
+                        if (FilledNumbers[i] == FilledNumbers[j] && i != j)
+                        {
+                            looping = true;
+                            Console.WriteLine("You can't choose a number twice");
+                        }
+                        else
+                        {
+                            looping = false;
+                        }
+                    }
+                }
+                /*foreach (var filledNumber in FilledNumbers)
+                {
+                    
                     if (filledNumber < 1 || filledNumber > 49)
                     {
                         Console.WriteLine("Numbers have to be between 1 and 49");
@@ -70,7 +90,7 @@ namespace Lotto
                             Console.WriteLine("You can't choose a number twice");
                         }
                     }
-                }
+                }*/
             }
         }
     }
