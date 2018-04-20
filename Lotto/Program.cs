@@ -10,13 +10,19 @@ namespace Lotto
     {
         static void Main(string[] args)
         {
+            #region Initialize
+
             var winningNumbers = new List<int>();
             var draw = new Drawing();
             var ticket = new FillTicket();
 
+            #endregion
+
+            
             draw.DrawNumbers();
             ticket.FillNumbers();
 
+            //Get winning numbers
             foreach (var ticketFilledNumber in ticket.FilledNumbers)
             {
                 foreach (var drawDrawedNumber in draw.DrawedNumbers)
@@ -28,6 +34,7 @@ namespace Lotto
                 }
             }
 
+            //Evaluate output
             if (winningNumbers.Count == 0)
             {
                 Console.WriteLine("Sorry, but you didn't win anything");
@@ -41,6 +48,7 @@ namespace Lotto
                 }
             }
 
+            //Evaluate if extra number is correct
             if (draw.ExtraNumber == ticket.extraNumber)
             {
                 Console.WriteLine("Your extra number" + draw.ExtraNumber + "is correct!");

@@ -22,15 +22,23 @@ namespace Lotto
             var looping = true;
             while (looping)
             {
+                //Get data from user
                 FilledNumbers.Clear();
                 Console.Write("Your Numbers: ");
                 var input = Console.ReadLine();
+
+                //Get extra number
                 Console.Write("Your extra number: ");
                 int extraNumber = 0;
+
+                #region ErrorHandling
+
                 if (!int.TryParse(Console.ReadLine(), out extraNumber))
                 {
                     Console.WriteLine("Extra number has to be a number");
                 }
+
+
                 else
                 {
                     if (extraNumber < 1 || extraNumber > 6)
@@ -42,7 +50,10 @@ namespace Lotto
                         this.extraNumber = extraNumber;
                     }
                 }
-                
+
+                #endregion
+
+                //Converting Data from user
                 var numbersStrings = input.Split(',');
 
                 if (numbersStrings.Length != 6)
@@ -56,6 +67,7 @@ namespace Lotto
                 }
                 for (int i = 0; i < FilledNumbers.Count; i++)
                 {
+                    //ErrorHandling
                     if (FilledNumbers[i] < 1 || FilledNumbers[i] > 49)
                     {
                         Console.WriteLine("Numbers have to be between 1 and 49");
@@ -74,23 +86,6 @@ namespace Lotto
                         }
                     }
                 }
-                /*foreach (var filledNumber in FilledNumbers)
-                {
-                    
-                    if (filledNumber < 1 || filledNumber > 49)
-                    {
-                        Console.WriteLine("Numbers have to be between 1 and 49");
-                        break;
-                    }
-                    foreach (var number in FilledNumbers)
-                    {
-                        if (number == filledNumber)
-                        {
-                            looping = true;
-                            Console.WriteLine("You can't choose a number twice");
-                        }
-                    }
-                }*/
             }
         }
     }

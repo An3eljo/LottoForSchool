@@ -15,7 +15,8 @@ namespace Lotto
             DrawedNumbers = new List<int>();
             ExtraNumber = new int();
         }
-
+        
+        //Drawing numbers
         internal void DrawNumbers()
         {
             var random = new Random();
@@ -26,6 +27,8 @@ namespace Lotto
             ExtraNumber = GetRandomExtraNumber();
         }
 
+        //Evaluates random Number
+        //Recursion if random number is already drawed
         private static int GetRandom(Random random, List<int> randomList)
         {
             var r = random.Next(1, 49 + 1);
